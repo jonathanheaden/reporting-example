@@ -14,18 +14,18 @@
    [:place "varchar(50)"]
    [:country "varchar(50)"]))
 
-(sql/with-connection
-  db
-  (create-employee-table)
-  (sql/insert-rows
-   :employee
-   ["Albert Einstein", "Engineer", "Ulm", "Germany"]
-   ["Alfred Hitchcock", "Movie Director", "London", "UK"]
-   ["Wernher Von Braun", "Rocket Scientist", "Wyrzysk", "Poland"]
-   ["Sigmund Freud", "Neurologist", "Pribor", "Czech Republic"]
-   ["Mahatma Gandhi", "Lawyer", "Gujarat", "India"]
-   ["Sachin Tendulkar", "Cricket Player", "Mumbai", "India"]
-   ["Michael Schumacher", "F1 Racer", "Cologne", "Germany"]))
+;;(sql/with-connection
+;;  db
+;;  (create-employee-table)
+;;  (sql/insert-rows
+;;   :employee
+;;   ["Albert Einstein", "Engineer", "Ulm", "Germany"]
+;;   ["Alfred Hitchcock", "Movie Director", "London", "UK"]
+;;   ["Wernher Von Braun", "Rocket Scientist", "Wyrzysk", "Poland"]
+;;   ["Sigmund Freud", "Neurologist", "Pribor", "Czech Republic"]
+;;   ["Mahatma Gandhi", "Lawyer", "Gujarat", "India"]
+;;   ["Sachin Tendulkar", "Cricket Player", "Mumbai", "India"]
+;;   ["Michael Schumacher", "F1 Racer", "Cologne", "Germany"]))
 
 (defn read-employees []
   (sql/with-connection db
