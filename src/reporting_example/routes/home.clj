@@ -9,7 +9,7 @@
   (layout/common [:h1 "Select a report:"]
 
                  [:ul
-                  [:li (link-to "/List report")]
+                  [:li (link-to "/list" "List report")]
                   [:li (link-to "/table" "Table report")]]))
 
 (defn write-response [report-bytes]
@@ -35,4 +35,6 @@
               [:p (.getMessage ex)])})))
 
 (defroutes home-routes
-  (GET "/" [] (home)))
+  (GET "/" [] (home))
+  (GET "/:report-type" [report-type] (generate-report report-type)))
+
